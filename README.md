@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./frontend/public/logo.png" alt="ATTESTLY Logo" width="120" height="120" />
+  <img src="https://raw.githubusercontent.com/avi-071-coder/Attestly/main/frontend/public/logo.png" alt="ATTESTLY Logo" width="120" height="120" />
 </p>
 
 <h1 align="center">ATTESTLY</h1>
