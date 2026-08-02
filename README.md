@@ -64,11 +64,24 @@ flowchart TB
 
 ---
 
+## Supported Foundation Models for Refinement
+
+| Base Model Family | Developer | Parameter Range | Min VRAM | Best Use Cases |
+| :--- | :--- | :--- | :--- | :--- |
+| **Llama 3.1** | Meta | 8B – 70B | 6 GB | Complex Reasoning, Coding, Domain Fine-Tuning |
+| **Mistral / Mixtral** | Mistral AI | 7B – 8x7B | 6 GB | Fast Instruction Following, Function Calling |
+| **Qwen 2.5** | Alibaba | 7B – 72B | 6 GB | Mathematics, Structured Data Parsing, Multi-Lingual |
+| **Phi-3.5** | Microsoft | 3.8B | 4 GB | Low-Latency Reasoning, Edge Deployment |
+| **Gemma 2** | Google | 9B – 27B | 8 GB | Compact Technical QA, Knowledge Extraction |
+| **DeepSeek V2** | DeepSeek | 16B | 10 GB | Architectural Reasoning, Code Refinement |
+
+---
+
 ## Core Features & Capabilities
 
 | Feature | Description | Key Tech / Specs |
 | :--- | :--- | :--- |
-| **Fine-Tuning Engine** | Parameter-efficient fine-tuning for SOTA models | QLoRA / LoRA (4-bit quantization, 6GB VRAM min) |
+| **Fine-Tuning Engine** | Parameter-efficient fine-tuning for SOTA models | QLoRA / LoRA (4-bit quantization) |
 | **Multi-Tenant Privacy** | Cryptographic row-level data isolation per user | Cryptographic tenant IDs, strict row scoping |
 | **Model Serving** | Deploy fine-tuned models to dedicated endpoints | vLLM / Ollama serving container |
 | **Benchmark Leaderboard** | Automated evaluation across standard datasets | MMLU, GSM8K, HumanEval, BioMMLU |
@@ -92,16 +105,29 @@ flowchart TB
 
 ## Setup & Execution
 
-### 1. Local Development
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/avi-071-coder/Attestly.git
+```
+
+```bash
 cd Attestly
+```
+
+### 2. Install Dependencies
+
+```bash
 npm install
+```
+
+### 3. Run Development Server
+
+```bash
 npm run dev
 ```
 
-### 2. Docker Deployment
+### 4. Production Setup (Docker Compose)
 
 ```bash
 docker compose up -d --build
