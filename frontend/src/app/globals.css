@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Mode Defaults (Pure Pitch Black background) */
+    --background: #000000;
+    --surface-1: #0A0A0A;
+    --surface-2: #121212;
+    --surface-3: #1E1E24;
+    --surface-4: #2A2A32;
+    
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+    
+    --border-default: #27272A;
+    --border-hover: #3F3F46;
+    
+    /* ATTESTLY Colors: Teal and Emerald */
+    --attestly-teal: #0D9488;
+    --attestly-teal-light: #14B8A6;
+    --attestly-emerald: #16A34A;
+    --attestly-emerald-light: #22C55E;
+    
+    --accent-amber: #F59E0B;
+    --accent-rose: #E11D48;
+  }
+
+  html.light {
+    /* Light Mode (Pure Crisp White background) */
+    --background: #FFFFFF;
+    --surface-1: #F8FAFC;
+    --surface-2: #F1F5F9;
+    --surface-3: #E2E8F0;
+    --surface-4: #CBD5E1;
+    
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    
+    --border-default: #E2E8F0;
+    --border-hover: #CBD5E1;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+@layer utilities {
+  .editorial-card {
+    background-color: var(--surface-1);
+    border: 1px solid var(--border-default);
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Brutalist/Editorial borders */
+  .border-structural {
+    border-width: 1px;
+    border-color: var(--border-default);
+  }
+  
+  .text-gradient-attestly {
+    background-image: linear-gradient(to right, var(--attestly-teal-light), var(--attestly-emerald-light), var(--attestly-teal));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Hide Next.js Dev Badge / Overlay in bottom left */
+nextjs-portal,
+#next-logo,
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay],
+div[class*="next-route-announcer"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-4);
+}
